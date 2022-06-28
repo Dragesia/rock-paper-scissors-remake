@@ -11,18 +11,6 @@ function computerPlay() {
     return rules[rnd];
 }
 
-dragon.addEventListener("click", () => {
-    dragon.classList.add("shake");
-})
-
-crossbow.addEventListener("click", () => {
-    crossbow.classList.add("shake");
-})
-
-shield.addEventListener("click", () => {
-    shield.classList.add("shake");
-})
-
 function game(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "tie";
@@ -79,7 +67,15 @@ const win = "WIN";
 const lose = "LOSE";
 const tie = "TIE";
 
+dragon.addEventListener("mouseover", () => {
+    dragon.classList.add("imghover");
+});
+dragon.addEventListener("mouseleave", () => {
+    dragon.classList.remove("imghover");
+})
+
 function dragonClick() {
+    dragon.classList.remove("imghover");
     crossbow.classList.add("invisible");
     shield.classList.add("invisible");
     main.appendChild(result);
@@ -112,11 +108,25 @@ function dragonClick() {
     }
 }
 
-dragon.addEventListener("transitionend", dragonClick);
+dragon.addEventListener("click", dragonClick);
+
+crossbow.addEventListener("mouseover", () => {
+    crossbow.classList.add("imghover");
+});
+crossbow.addEventListener("mouseleave", () => {
+    crossbow.classList.remove("imghover");
+})
+
+function leftSlide() {
+    crossbow.classList.add("leftSlide");
+}
 
 function crossbowClick() {
+    crossbow.classList.remove("imghover");
     dragon.classList.add("invisible");
     shield.classList.add("invisible");
+    leftSlide();
+    setTimeout(() => {return}, 800);
     main.appendChild(result);
     main.appendChild(pc);
 
@@ -147,9 +157,17 @@ function crossbowClick() {
     }
 }
 
-crossbow.addEventListener("transitionend", crossbowClick);
+crossbow.addEventListener("click", crossbowClick);
+
+shield.addEventListener("mouseover", () => {
+    shield.classList.add("imghover");
+});
+shield.addEventListener("mouseleave", () => {
+    shield.classList.remove("imghover");
+})
 
 function shieldClick() {
+    shield.classList.remove("imghover");
     dragon.classList.add("invisible");
     crossbow.classList.add("invisible");
     main.insertBefore(result, shield);
@@ -182,4 +200,4 @@ function shieldClick() {
     }
 }
 
-shield.addEventListener("transitionend", shieldClick);
+shield.addEventListener("click", shieldClick);
