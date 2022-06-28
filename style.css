@@ -74,6 +74,10 @@ img {
     padding-top: 1rem;
 }
 
+.pc {
+    transition: all .8s;
+}
+
 button {
     padding: 1rem;
     font-size: 1.5rem;
@@ -86,7 +90,7 @@ button {
 
 .animation {
     animation-name: leftSlide;
-    animation-duration: .79s;
+    animation-duration: .785s;
     
 }
 
