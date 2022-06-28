@@ -11,33 +11,6 @@ function computerPlay() {
     return rules[rnd];
 }
 
-function game(playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
-        return "tie";
-    }
-
-    else if (playerSelection == "dragon") {
-        if (computerSelection == "crossbow") {
-            return "lose";
-        }
-        return "win";
-    }
-
-    else if (playerSelection == "crossbow") {
-        if (computerSelection == "shield") {
-            return "lose";
-        }
-        return "win";
-    }
-
-    else if (playerSelection == "shield") {
-        if (computerSelection == "dragon") {
-            return "lose";
-        }
-        return "win";
-    }
-}
-
 const result = document.createElement("div");
 const pc = document.createElement("div");
 result.classList.add("result");
