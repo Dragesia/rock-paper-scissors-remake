@@ -42,6 +42,8 @@ const result = document.createElement("div");
 const pc = document.createElement("div");
 result.classList.add("result");
 pc.classList.add("pc");
+pc.classList.add("firstInvisible");
+
 
 const playAgain = document.createElement("button");
 playAgain.innerHTML = "Play Again";
@@ -77,36 +79,42 @@ dragon.addEventListener("mouseleave", () => {
 function dragonClick() {
     dragon.removeEventListener("click", dragonClick);
     dragon.classList.remove("imghover");
-    crossbow.classList.add("invisible");
-    shield.classList.add("invisible");
-    main.appendChild(result);
-    main.appendChild(pc);
+    crossbow.classList.add("firstInvisible");
+    shield.classList.add("firstInvisible");
+    setTimeout(() => {
+        crossbow.classList.add("invisible");
+        shield.classList.add("invisible");
+        main.appendChild(result);
+        main.appendChild(pc);
+        pc.classList.remove("firstInvisible");
 
-    const pcChoice = computerPlay();
-    if(pcChoice == "dragon") {
-        pc.appendChild(pcDragon);
-        pcDragon.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = tie;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "crossbow") {
-        pc.appendChild(pcCrossbow);
-        pcCrossbow.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = lose;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "shield") {
-        pc.appendChild(pcShield);
-        pcShield.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = win;
-            result.appendChild(playAgain);
-        }, 800);
-    }
+        const pcChoice = computerPlay();
+        if(pcChoice == "dragon") {
+            pc.appendChild(pcDragon);
+            pcDragon.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = tie;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "crossbow") {
+            pc.appendChild(pcCrossbow);
+            pcCrossbow.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = lose;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "shield") {
+            pc.appendChild(pcShield);
+            pcShield.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = win;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+    }, 800);
+    
 }
 
 dragon.addEventListener("click", dragonClick);
@@ -129,6 +137,7 @@ function crossbowClick() {
         shield.classList.add("invisible");
         main.appendChild(result);
         main.appendChild(pc);
+        pc.classList.remove("firstInvisible");
 
         const pcChoice = computerPlay();
         if(pcChoice == "dragon") {
@@ -171,36 +180,42 @@ shield.addEventListener("mouseleave", () => {
 function shieldClick() {
     shield.removeEventListener("click", shieldClick);
     shield.classList.remove("imghover");
-    dragon.classList.add("invisible");
-    crossbow.classList.add("invisible");
-    main.insertBefore(result, shield);
-    main.insertBefore(pc, result);
+    dragon.classList.add("firstInvisible");
+    crossbow.classList.add("firstInvisible");
+    setTimeout(() => {
+        dragon.classList.add("invisible");
+        crossbow.classList.add("invisible");
+        main.insertBefore(result, shield);
+        main.insertBefore(pc, result);
+        pc.classList.remove("firstInvisible");
 
-    const pcChoice = computerPlay();
-    if(pcChoice == "dragon") {
-        pc.appendChild(pcDragon);
-        pcDragon.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = lose;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "crossbow") {
-        pc.appendChild(pcCrossbow);
-        pcCrossbow.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = win;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "shield") {
-        pc.appendChild(pcShield);
-        pcShield.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = tie;
-            result.appendChild(playAgain);
-        }, 800);
-    }
+        const pcChoice = computerPlay();
+        if(pcChoice == "dragon") {
+            pc.appendChild(pcDragon);
+            pcDragon.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = lose;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "crossbow") {
+            pc.appendChild(pcCrossbow);
+            pcCrossbow.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = win;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "shield") {
+            pc.appendChild(pcShield);
+            pcShield.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = tie;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+    }, 800);
+    
 }
 
 shield.addEventListener("click", shieldClick);
