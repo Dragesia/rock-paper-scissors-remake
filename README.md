@@ -1,1 +1,1 @@
-# rock-paper-scissors-re-ake
+# rock-paper-scissors-remake
