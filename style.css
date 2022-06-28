@@ -9,6 +9,13 @@ body {
     background-color: whitesmoke;
 }
 
+#container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 /*General adjustments end */
 
 /* Header start */ 
@@ -40,7 +47,6 @@ i {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    padding: 3rem;
 }
 
 img {
@@ -74,10 +80,6 @@ img {
     padding-top: 1rem;
 }
 
-.pc {
-    transition: all .8s;
-}
-
 button {
     padding: 1rem;
     font-size: 1.5rem;
@@ -109,6 +111,24 @@ button {
 
 
 /* Main section end */
+
+/* Footer start */
+
+#footer {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: darkred;
+}
+/* Footer end */
 
 /* Hover text start */
   
