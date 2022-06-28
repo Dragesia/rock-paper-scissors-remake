@@ -117,16 +117,14 @@ crossbow.addEventListener("mouseleave", () => {
     crossbow.classList.remove("imghover");
 })
 
-function leftSlide() {
-    crossbow.classList.add("leftSlide");
-}
-
 function crossbowClick() {
     crossbow.classList.remove("imghover");
-    dragon.classList.add("invisible");
+    dragon.classList.add("firstInvisible");
+    shield.classList.add("firstInvisible");
+    crossbow.classList.add("animation");
+    setTimeout(() => {
+        dragon.classList.add("invisible");
     shield.classList.add("invisible");
-    leftSlide();
-    setTimeout(() => {return}, 800);
     main.appendChild(result);
     main.appendChild(pc);
 
@@ -155,6 +153,8 @@ function crossbowClick() {
             result.appendChild(playAgain);
         }, 800);
     }
+    }, 800);
+    
 }
 
 crossbow.addEventListener("click", crossbowClick);

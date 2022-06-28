@@ -46,7 +46,7 @@ i {
 img {
     width: 300px;
     height: 300px;
-    transition: all .8s;
+    transition: transform .8s;
 }
 
 .imghover {
@@ -78,6 +78,29 @@ button {
     padding: 1rem;
     font-size: 1.5rem;
     width: 300px;
+}
+
+.crossbow {
+    position: relative;
+}
+
+.animation {
+    animation-name: leftSlide;
+    animation-duration: .79s;
+    
+}
+
+@keyframes leftSlide {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 330px;
+    }
+}
+
+.firstInvisible {
+    opacity: 0;
 }
 
 
