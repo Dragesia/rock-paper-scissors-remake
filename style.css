@@ -9,14 +9,11 @@ body {
     background-color: whitesmoke;
 }
 
+/*General adjustments end */
+
 #container {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
-
-/*General adjustments end */
 
 /* Header start */ 
 
@@ -47,6 +44,7 @@ i {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin-top: 5rem;
 }
 
 img {
@@ -122,6 +120,10 @@ button {
     align-items: center;
     font-size: 1.2rem;
     padding: 1rem;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 }
 
 a {
