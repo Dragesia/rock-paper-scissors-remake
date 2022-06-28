@@ -7,6 +7,24 @@ body {
     font-size: 10px;
 }
 
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    background-color: #1f1f1f;;
+    color: whitesmoke;
+    padding: 1rem;
+}
+
+red {
+    color: darkred;
+}
+
+i {
+    color: gray;
+}
+
 /* Hover text */
   
 .tooltip .tooltiptext {
@@ -28,3 +46,4 @@ body {
 .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
