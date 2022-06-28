@@ -75,6 +75,7 @@ dragon.addEventListener("mouseleave", () => {
 })
 
 function dragonClick() {
+    dragon.removeEventListener("click", dragonClick);
     dragon.classList.remove("imghover");
     crossbow.classList.add("invisible");
     shield.classList.add("invisible");
@@ -118,41 +119,42 @@ crossbow.addEventListener("mouseleave", () => {
 })
 
 function crossbowClick() {
+    crossbow.removeEventListener("click", crossbowClick);
     crossbow.classList.remove("imghover");
     dragon.classList.add("firstInvisible");
     shield.classList.add("firstInvisible");
     crossbow.classList.add("animation");
     setTimeout(() => {
         dragon.classList.add("invisible");
-    shield.classList.add("invisible");
-    main.appendChild(result);
-    main.appendChild(pc);
+        shield.classList.add("invisible");
+        main.appendChild(result);
+        main.appendChild(pc);
 
-    const pcChoice = computerPlay();
-    if(pcChoice == "dragon") {
-        pc.appendChild(pcDragon);
-        pcDragon.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = win;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "crossbow") {
-        pc.appendChild(pcCrossbow);
-        pcCrossbow.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = tie;
-            result.appendChild(playAgain);
-        }, 800);
-    }
-    else if(pcChoice == "shield") {
-        pc.appendChild(pcShield);
-        pcShield.classList.add("shake");
-        setTimeout(() => {
-            result.innerHTML = lose;
-            result.appendChild(playAgain);
-        }, 800);
-    }
+        const pcChoice = computerPlay();
+        if(pcChoice == "dragon") {
+            pc.appendChild(pcDragon);
+            pcDragon.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = win;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "crossbow") {
+            pc.appendChild(pcCrossbow);
+            pcCrossbow.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = tie;
+                result.appendChild(playAgain);
+            }, 800);
+        }
+        else if(pcChoice == "shield") {
+            pc.appendChild(pcShield);
+            pcShield.classList.add("shake");
+            setTimeout(() => {
+                result.innerHTML = lose;
+                result.appendChild(playAgain);
+            }, 800);
+        }
     }, 800);
     
 }
@@ -167,6 +169,7 @@ shield.addEventListener("mouseleave", () => {
 })
 
 function shieldClick() {
+    shield.removeEventListener("click", shieldClick);
     shield.classList.remove("imghover");
     dragon.classList.add("invisible");
     crossbow.classList.add("invisible");
