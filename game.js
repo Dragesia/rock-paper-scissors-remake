@@ -49,6 +49,13 @@ dragon.addEventListener("mouseleave", () => {
     dragon.classList.remove("imghover");
 })
 
+pc.addEventListener("mouseover", () => {
+    pc.classList.add("imghover");
+});
+pc.addEventListener("mouseleave", () => {
+    pc.classList.remove("imghover");
+})
+
 function dragonClick() {
     dragon.removeEventListener("click", dragonClick);
     dragon.classList.remove("imghover");
